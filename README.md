@@ -15,6 +15,9 @@ A login and register features are provided by the website and there are three ty
 - Swagger
 - ASP.NET Framework 6.0
 
+[View Project Report](./Group%20Project.pdf)
+[View Project Presentation Video](https://youtu.be/lp-lBdyOdRo)
+
 # Dependencies and installation:
 In this project, we used following dependencies:  
 ![image](https://github.com/uoa-compsci399-s1-2023/Capstone_MVP/assets/126427168/fb5cc2ce-ad7d-4656-845a-c1d82a48ef1b)
