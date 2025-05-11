@@ -16,6 +16,7 @@ A login and register features are provided by the website and there are three ty
 - ASP.NET Framework 6.0
 
 [View Project Report](./Group%20Project.pdf)
+
 [View Project Presentation Video](https://youtu.be/lp-lBdyOdRo)
 
 # Dependencies and installation:
