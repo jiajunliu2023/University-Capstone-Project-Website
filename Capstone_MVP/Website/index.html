@@ -1,0 +1,612 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <!--Load the Google Platform Library-->
+    <!--<script src="https://apis.google.com/js/client:platform.js?onload=renderButton" async defer></script>-->
+    <!--Specify your app's 'client id-->
+    <!--<meta name="google-signin-client_id" content="697206866468-sola2pkf206lk7n5ve671n773lms0blh.apps.googleusercontent.com">-->
+    <script src="https://kit.fontawesome.com/731c3061a7.js" crossorigin="anonymous"></script>
+    <title>CapstoneMVP</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="CSS.css">
+    <link rel="preconnect" href="https//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
+    <!--<script src="js/jquery-3.6.1.min.js"></script>-->
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="index.html" style="display: flex; align-items: center; justify-content: center;margin-right: 12.5px;"><img src="./logo.png" width="125"></a>
+            <div class="menu" id="nav" align="center" style="color: royalblue;">
+                <a id="ho" onclick="showHomePage()">Home</a>
+                <a id="pro" onclick="showProject()">Project</a>
+                <a id="re" onclick="showReward()">Reward</a>
+                <a id="peo" onclick="showPeople()">People</a>
+                <a id="upl" onclick="showYourProject()">Upload</a>
+                <a id="upd" onclick="showUpdateProject()">Update</a>
+            </div>
+            <div id="loginstatus" class="1" align="right">
+                <div class="login-button" style="display: inline-flex;align-items: center;justify-content: center;padding: 8px 16px;background-color: royalblue;color: #ffffff;border-radius: 20px;cursor: pointer;transition: background-color 0.3s; margin-right: 20px;"
+                     onclick="showLogin()">
+                    <i class="fa-solid fa-user" style="margin-right: 4px;"></i>Login
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+    <div class="Background" id="homepage">
+        <div class="swiper home-slider">
+            <div class="swiper-wrapper wrapper">
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>YOU ARE ARRIVE!</span>
+                        <h3>CAPSTONE MVP</h3>
+                        <p>
+                            Get to Know Us<br>As students, it can be challenging to identify a project with a scale suited to our skill level or find a team with the necessary skill sets to complete a project. Capstone MVP is a platform to connect students
+                            with each other based on their interests and skills to form teams and undertake projects.
+                        </p>
+                        <a href="" class="btn">Visit Us to Know More &#10148</a>
+                    </div>
+                    <div class="image">
+                        <img src="./poster.jpg" alt="">
+                    </div>
+                </div>
+
+                <!--<div class="swiper-slide slide">
+                    <div class="content">
+                        <span>Project1</span>
+                        <h3>Best Award</h3>
+                        <p>This is our student work from 2021</p>
+                        <a href="" class="btn">Explore Now &#10148</a>
+                    </div>
+                    <div class="image">
+                        <img src="./Project1.png" width="800" alt="">
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>Project2</span>
+                        <h3>Best Award</h3>
+                        <p>This is our student work from 2022</p>
+                        <a href="" class="btn">Explore Now &#10148</a>
+                    </div>
+                    <div class="image">
+                        <img src="./project2.png" width="800" alt="">
+                    </div>
+                </div>-->
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+
+
+    <div id="login">
+        <div style="height: 82px;"></div>
+        <div class="Background">
+            <h1 align="center" style="color:rgb(26,115,232);">&nbsp;</h1>
+            <div class="form-container">
+                <h1 style="color:blue;margin-bottom: 20px;" align="center">Login</h1>
+                <h2 style="color:black;margin-bottom: 20px;" align="center">Use your account</h2>
+
+                <input type="text" id="useremaillogin" required>
+                <label for="input1">Email</label>
+
+                <input type="password" id="passwordlogin" required>
+                <label for="input2">Password</label>
+
+                <form action="#" style="text-align:center; width: 414px;">
+                    <select name="logintypes" id="ltypes" onchange="changelTextColor()">
+                        <option value="" disabled selected>Select a login type</option>
+                        <option value="Student" style="color: black;">Student</option>
+                        <option value="Admin" style="color: black;">Admin</option>
+                        <option value="Visitor" style="color: black;">Visitor</option>
+                    </select>
+
+                    <h4 align="left" style="font: size 14px;font-weight: 500;color: #5f6368;margin-bottom: 15px;margin-top: 15px;">No account yet? Please create account first</h4>
+
+                    <div class="action-container" style="margin-bottom: 15px;">
+                        <h4 style="color: rgb(26,115,232);width: fit-content;" class="createaccount"><a onclick="showRegister()">Create account</a></h4>
+                        <input type="button" class="login-button" style="width: 100px;text-align: center;padding-left: 0;height:48px;background: rgb(26, 115, 232);color: white;border: none;" value="Login" onclick="UserLogin()" />
+                    </div>
+                    <div id="g_id_onload" data-client_id="697206866468-sola2pkf206lk7n5ve671n773lms0blh.apps.googleusercontent.com" data-context="signin" data-ux_mode="popup" data-callback="handleCredentialResponse" data-auto_prompt="false">
+                    </div>
+                    <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline" data-text="signin_with" data-size="large" data-locale="en-GB" data-logo_alignment="left">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="register">
+        <div style="height: 82px;"></div>
+        <div class="Background">
+            <h1 align="center" style="color:rgb(26,115,232);">&nbsp;</h1>
+            <div class="form-container">
+                <h2 style="color:black;margin-bottom: 20px;" align="center">Create your Account</h2>
+                <div class="name-container">
+                    <div>
+                        <input type="text" id="userfirstnameregister" required>
+                        <label for="input1">Firstname</label>
+                    </div>
+                    <div>
+                        <input type="text" id="userlastnameregister" required>
+                        <label for="input2">Lastname</label>
+                    </div>
+                </div>
+
+                <input type="text" id="useremailregister" required>
+                <label for="input3">Email</label>
+
+                <input type="password" id="userpasswordregister" required>
+                <label for="input4">Password</label>
+
+                <input type="text" id="userinterestregister" required>
+                <label for="input6">Interest</label>
+
+
+
+                <form action="#" style="text-align:center;width: 414px;">
+                    <select name="registertypes" id="rtypes" onchange="changerTextColor()">
+                        <option value="" disabled selected>Select a register type</option>
+                        <option value="Student" style="color: black;">Student</option>
+                        <option value="Admin" style="color: black;">Admin</option>
+                        <option value="Visitor" style="color: black;">Visitor</option>
+                    </select>
+                    <div class="show-password-container" style="margin-top: 10px;width: fit-content;" onclick="togglePasswordVisibility()">
+                        <input type="checkbox" id="password-toggle" style="width: 25px;height: 25px;margin-right: 10px;" class="password-toggle">
+                        <h4 style="width: fit-content;font-size: 14px;font-weight: 500;color:#202124"> Show password</h4>
+                    </div>
+                    <div class="action-container" style="margin-top: 5px;">
+                        <h4 style="color: rgb(26,115,232);width: fit-content;" class="createaccount"><a onclick="showLogin()">Login instead</a></h4>
+                        <input type="button" class="register-button" style="width: 100px;text-align: center;padding-left: 0;height:48px;background: rgb(26, 115, 232);color: white;border: none;" value="Register" onclick="UserRegister()" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div id="project">
+        <div class="Background">
+            <div style="height: 90px;"></div>
+            
+            <input type="button" id="projectdelete" assign="right" onclick="DeleteProject()" class="login-button" style="width: 100px;text-align: center;padding-left: 0;height:48px;background: rgb(26, 115, 232);color: white;border: none;" value="DeleteProject" />
+            <div class="Studentproject">
+                <h1>Student Project</h1>
+                <p>Welcome to our student project. <br>Here you’ll find a selection of their work. <br>Explore their projects to learn more about what they have achieve so far.</p>
+                <div class="icons">
+                    <input type="text" id="Search" onkeyup="Search()" class="Search-bar"> </input>
+                    <i class="fas fa-search" id="search-icon" onclick="Search()"></i>
+                </div>
+                <div id="SemesterFilter">
+                    <select class="Semester" id="semester" onchange="GetProejctsBySemester(this.value)">
+                        <option>Select Semester</option>
+                    </select>
+                </div>
+                <div class="box-container" id="projects">
+
+
+                </div>
+
+                <form action="" class="search-form">
+                    <input type="search" name="" placeholder="search here..." name="" id="search-box">
+                    <label for="search-box" class="fas fa-search"></label>
+                    <i class="fas fa-time" id="close"></i>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="yourproject">
+        <div style="height: 82px;"></div>
+        <div class="Background">
+            <div class="wrapper">
+                <div class="projectbox">
+                    <h2>Create Project</h2>
+                    <div style="font-size: 25px; position: absolute; padding: 30px; right: 50px">
+                        <div onclick="editProject()" id="editproject" align="center">Update Project</div>
+                    </div>
+                    <div class="info">
+                        <h3>PROJECT INFORMATION <i class="fa-solid fa-circle-info"></i></h3>
+                        <br>
+                        <div align="TeamName">
+                            <div style="font-family: sans-serif; font-size: 15px;"><label>Team name *</label></div>
+                            <input type="text" placeholder="Enter your team name..." id="TeamNameUpload" required />
+                        </div>
+                        <div align="ProjectName">
+                            <div style="font-family: sans-serif; font-size: 15px;"><label>Project Name *</label></div>
+                            <input type="text" placeholder="Enter your project name..." id="ProjectNameUpload" required />
+                        </div>
+                        <div align="Semester">
+                            <div style="font-family: sans-serif; font-size: 15px;"><label>Semester *</label></div>
+                            <input type="text" placeholder="Enter Semester..." id="SemesterUpload" required />
+                        </div>
+                        <div align="Skill">
+                            <div style="font-family: sans-serif; font-size: 15px;"><label>Skill *</label></div>
+                            <input type="text" placeholder="Enter your skill..." id="SkillUpload" required />
+                        </div>
+                        <div align="Overview">
+                            <div style="font-family: sans-serif; font-size: 15px; height: 40px"><label>Project Description *</label></div>
+                            <textarea name="comment" placeholder="Enter your Project Description..." id="IntroductionUpload" required></textarea>
+                        </div>
+
+                        <div align="Approach">
+                            <div style="font-family: sans-serif; font-size: 15px;"><label>Approach *</label></div>
+                            <textarea name="comment" placeholder="Enter your approach..." id="ApproachUpload" required></textarea>
+                        </div>
+                        <div align="Video">
+                            <div style="font-family: sans-serif; font-size: 15px;"><label>Video *</label></div>
+                            <input type="text" placeholder="Enter video link..." id="VideoUpload" required />
+                        </div>
+                    </div>
+                    <div class="input-bx">
+                        <h3 class="upload-area-title">Upload Image</h3>
+                        <form action="">
+                            <input type="file" id="upload" accept=".png, .jpg, .pdf" hidden>
+                            <label for="upload" class="uploadlabel">
+                                <span><i class="fas fa-cloud-upload-alt"></i></span>
+                                <p>Click To Upload</p>
+                            </label>
+                        </form>
+                    </div>
+
+                    
+                    <input type="Submit" value="Submit" onclick="ProjectUpload()" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="deleteproject">
+        <div class="wrapper">
+            <div class="box">
+                <div class="deleteInfo">
+                    <h2 style="margin-bottom:20px;"> Delete Project</h2>
+                    <div align="ProjectID">
+                        <label>Project ID: </label>
+                        <input style="margin-left:1px" type="text" id="projectIDdelete" />
+                        </br>
+                        </br>
+                        <input type="button" class="deletebtn" style="border-radius: 6px;width: 100px;text-align: center;padding-left: 0;height:48px;background: rgb(26, 115, 232);color: white;border: none;font-weight: 600;font-size:small;" value="Delete Project" onclick="ProjectDelete()" />
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="updateproject">
+        <div style="height: 82px;"></div>
+        <div class="Background">
+            <div class="wrapper">
+                <div class="projectbox">
+                    <h2>Update Project</h2>
+                    <div class="info">
+                        <h3>PROJECT INFORMATION <i class="fa-solid fa-circle-info"></i></h3>
+                        <br>
+                        <div align="ProjectID">
+                            <div style="font-family: sans-serif; font-size: 15px;"><label>ProjectID *</label></div>
+                            <input type="text" placeholder="Enter your project ID..." id="ProjectIDUpdate" />
+                        </div>
+                        <div align="TeamName">
+                            <div style="font-family: sans-serif; font-size: 15px;"><label>Team name *</label></div>
+                            <input type="text" placeholder="Enter your team name..." id="TeamNameUpdate" />
+                        </div>
+                        <div align="ProjectName">
+                            <div style="font-family: sans-serif; font-size: 15px;"><label>Project Name *</label></div>
+                            <input type="text" placeholder="Enter your project name..." id="ProjectNameUpdate" />
+                        </div>
+                        <div align="Semester">
+                            <div style="font-family: sans-serif; font-size: 15px;"><label>Semester *</label></div>
+                            <input type="text" placeholder="Enter Semester..." id="SemesterUpdate" />
+                        </div>
+                        <div align="Skill">
+                            <div style="font-family: sans-serif; font-size: 15px;"><label>Skill *</label></div>
+                            <input type="text" placeholder="Enter your skill..." id="SkillUpdate" />
+                        </div>
+                        <div align="Introduction">
+                            <div style="font-family: sans-serif; font-size: 15px;"><label>Project Description *</label></div>
+                            <textarea name="comment" placeholder="Enter your Project Description..." id="IntroductionUpdate"></textarea>
+                        </div>
+                        <div align="Approach">
+                            <div style="font-family: sans-serif; font-size: 15px;"><label>Approach *</label></div>
+                            <textarea name="comment" placeholder="Enter your approach..." id="ApproachUpdate"></textarea>
+                        </div>
+                        <div align="Video">
+                            <div style="font-family: sans-serif; font-size: 15px;"><label>Video *</label></div>
+                            <input type="text" placeholder="Enter video link..." id="VideoUpdate" />
+                        </div>
+                    </div>
+                    <div class="input-bx">
+                        <h3 class="upload-area-title">Upload Image</h3>
+                        <form action="">
+                            <input type="file" id="update" accept=".png, .jpg, .pdf"hidden>
+                            <label for="upload" class="uploadlabel">
+                                <span><i class="fas fa-cloud-upload-alt"></i></span>
+                                <p>Click To Upload</p>
+                            </label>
+                        </form>
+                    </div>
+
+                    
+                    <input type="Submit" value="Update Project" onclick="ProjectUpdate()" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="details">
+        <div style="height: 90px;"></div>
+        <div style="margin-top:auto; margin-bottom:auto" class="box-container" id="ProjectdetailsTable"></div>
+        <br />
+
+        <hr />
+        
+        <div class="commentstable" id="CommentsTable">
+        </div>
+        <div id="writecommenttable" class="smart-blue" style="margin-bottom: 10px;margin-top: 10px;"></div>
+    </div>
+
+
+
+    <div id="reward">
+        <div style="height: 82px;"></div>
+        <div class="Studentreward">
+            <section class="banner" id="banner">
+                <div class="content">
+                    <h2>Rewarded Project</h2>
+                    <p>This is the rewarded Project Page. It's a great opportunity to help visitors understand the context and background of the best latest work. This allow the audience to see the people's favourite</p>
+                </div>
+            </section>
+            <div class="Award">
+                <div class="ExcellenceAwardWinner">
+                    <form action="#" style="text-align:center">
+                        <h3>Excellence Award Winner</h3>
+                        <div class="fa-3x">
+                            <span class="fa-layers fa-fw" style="background:#fff">
+                                <i class="fas fa-ribbon" data-fa-transform="shrink-10 down-1" data-fa-mask="fas fa-certificate" style="color: lightblue"></i>
+                                <span class="fa-layers-counter" style="background:Blue">1st</span>
+                            </span>
+                        </div>
+                        <select class="ProjectTeam" id="ltypes1">
+                            <option value="Student">Select a Project</option>
+                        </select>
+                    </form>
+                </div>
+
+                <div class="ExcellenceAwardRunnersUp">
+                    <form action="#" style="text-align:center">
+                        <h3>Excellence Award Runners Up</h3>
+                        <div class="fa-3x">
+                            <span class="fa-layers fa-fw" style="background:#fff">
+                                <i class="fas fa-ribbon" data-fa-transform="shrink-10 down-1" data-fa-mask="fas fa-certificate" style="color: lightblue"></i>
+                                <span class="fa-layers-counter" style="background:Blue">2nd</span>
+                            </span>
+                        </div>
+                        <select class="ProjectTeam" id="ltypes2">
+                            <option value="Student">Select a Project</option>
+                        </select>
+                    </form>
+                </div>
+
+                <div class="CommunityImpactAwardWinner">
+                    <form action="#" style="text-align:center">
+                        <h3>Community Impact Award Winner</h3>
+                        <div class="fa-3x">
+                            <span class="fa-layers fa-fw" style="background:#fff">
+                                <i class="fas fa-thumbs-up" data-fa-transform="shrink-10 down-1" data-fa-mask="fas fa-certificate" style="color: orange"></i>
+                                <span class="fa-layers-counter" style="background:Red">1st</span>
+                            </span>
+                        </div>
+                        <select class="ProjectTeam" id="ltypes3">
+                            <option value="Student">Select a Project</option>
+                        </select>
+                    </form>
+                </div>
+
+                <div class="CommunityImpactAwardRunnersup">
+                    <form action="#" style="text-align:center">
+                        <h3>Community Impact Award Runners Up</h3>
+                        <div class="fa-3x">
+                            <span class="fa-layers fa-fw" style="background:#fff">
+                                <i class="fas fa-thumbs-up" data-fa-transform="shrink-10 down-1" data-fa-mask="fas fa-certificate" style="color: orange"></i>
+                                <span class="fa-layers-counter" style="background:Red">2nd</span>
+                            </span>
+                        </div>
+                        <select class="ProjectTeam" id="ltypes4">
+                            <option value="Student">Select a Project</option>
+                        </select>
+                    </form>
+                </div>
+
+                <div class="PeoplesChoiceAwardWinner">
+                    <form action="#" style="text-align:center">
+                        <h3>Peoples Choice Award Winner</h3>
+                        <div class="fa-3x">
+                            <span class="fa-layers fa-fw" style="background:#fff">
+                                <i class="fas fa-heart" data-fa-transform="shrink-10 down-1" data-fa-mask="fas fa-certificate" style="color: mediumpurple"></i>
+                                <span class="fa-layers-counter" style="background:Green">1st</span>
+                            </span>
+                        </div>
+                        <select class="ProjectTeam" id="ltypes5">
+                            <option value="Student">Select a Project</option>
+                        </select>
+                    </form>
+                </div>
+
+                <div class="PeoplesChoiceAwardRunnersup">
+                    <form action="#" style="text-align:center">
+                        <h3>Peoples Choice Award Runners Up</h3>
+                        <div class="fa-3x">
+                            <span class="fa-layers fa-fw" style="background:#fff">
+                                <i class="fas fa-heart" data-fa-transform="shrink-10 down-1" data-fa-mask="fas fa-certificate" style="color: mediumpurple"></i>
+                                <span class="fa-layers-counter" style="background:Green">2nd</span>
+                            </span>
+                        </div>
+                        <select class="ProjectTeam" id="ltypes6">
+                            <option value="Student">Select a Project</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+            <div class="button">
+                
+                <input type="button" class="register-button" style="width: 100px;text-align: center;padding-left: 0;height:48px;background: rgb(26, 115, 232);color: white;border: none;" value="Award" onclick="AwardProject()" />
+            </div>
+        </div>
+    </div>
+
+
+    <div id="people">
+        <div style="height: 82px;"></div>
+        <div class="Background">
+            <br />
+            <br />
+            <div class="Searchbox">
+                <div class="searchpeople">
+                    <h1>Search for your teammates</h1>
+                    <label>Search</label>
+                    <input id="searchpeopleInput" onkeyup="searchPeople()"></input>
+                    <br />
+                    <div style="overflow:scroll;">
+                        <table border="1" width="100%" cellspacing="0" cellpadding="8" id="PeopleTable" style="margin-left:auto;margin-right:auto;"></table>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <div class="Searchbox">
+                <div class="searchteam">
+                    <h1>Join or Create a team that you are interested in</h1>
+                    <label>Search</label>
+                    <input id="searchteamInput" onkeyup="searchTeam()"></input>
+                    <div style="overflow:scroll;">
+                        <table border="1" width="100%" cellspacing="0" cellpadding="8" id="TeamTable" style="margin-left:auto;margin-right:auto"></table>
+                    </div>
+
+                    <h4 style="text-align:center;color:dodgerblue">
+                        Did not find an interesting team? You can contact with admin to create your own team!
+                        <input type="button" class="register-button" style="width: 100px;text-align: center;padding-left: 0;height:48px;background: rgb(26, 115, 232);color: white;border: none;" value="Create Team" onclick="showCreatteam()" />
+
+                    </h4>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="createteam">
+        <div style="height: 82px;"></div>
+        <div class="Background" style="padding-top:20px">
+
+            <div class="form-container" style="height:500px">
+                <h1 style="color:blue">Create New Team</h1>
+                <br />
+
+                <div>
+                    <input type="text" id="createteamname" />
+                    <label for="input1">TeamName</label>
+
+
+                </div>
+                <div>
+                    <input type="text" id="createstudent1" />
+                    <label for="input2">Student1</label>
+
+                </div>
+                <div>
+                    <input type="text" id="createstudent2" />
+                    <label for="input2">Student2</label>
+
+
+                </div>
+                <div>
+                    <input type="text" id="createstudent3" />
+                    <label for="input3">Student3</label>
+
+
+                </div>
+                <div>
+                    <input type="text" id="createstudent4" />
+                    <label for="input4">Student4</label>
+
+
+                </div>
+                <div>
+                    <input type="text" id="createstudent5" />
+                    <label for="input5">Student5</label>
+
+
+                </div>
+                <div>
+                    <input type="text" id="createstudent6" />
+                    <label for="input6">Student6</label>
+                </div>
+                <input type="button" id="createteam" class="register-button" style="width: 100px; text-align: center;padding-left: 0; height:48px;background: rgb(26,115,232);color:white; border: none;margin:0 auto;" value="Create" onclick="CreateTeam()" />
+
+            </div>
+            
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <script src="Script.js"></script>
+
+    <script>var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }</script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>var swiper = new Swiper(".home-slider", {
+            spaceBetween: 20,
+            centeredSlides: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+            },
+        });</script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.js"></script>
+
+</body>
+
+</html>
